@@ -3,29 +3,21 @@
     <base href="/">
   </head>
   <body>
-    <div ui-view="hitchMain"></div>
-
-    <script src="bower_components/angular/angular.min.js"></script>
-    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="bower_components/es6-module-loader/dist/es6-module-loader.js"></script>
     <script src="bower_components/system.js/dist/system.js"></script>
     <script>
       System.paths = {
         'dist/*': '/dist/*.js',
         'services/*': '/dist/services/*.js',
-        'states/*': '/dist/states/*.js',
+        'components/*': '/dist/components/*.js',
         'templates': '/dist/templates.js',
-        'angular': '/bower_components/angular/angular.min.js',
+        'react': '/bower_components/react/react.min.js',
+        'react-router': '/bower_components/react-router/build/umd/ReactRouter.js',
         'lodash': '/bower_components/lodash/lodash.min.js',
         'lodash-deep': '/bower_components/lodash-deep/lodash-deep.min.js'
       };
       System.import('./dist/app').then(function(Hitch) {
         var hitch = new Hitch();
-        angular.element(document).ready(function() {
-          angular.bootstrap(document, ['hitch'], {
-            strictDi: true
-          });
-        });
       });
     </script>
   </body>

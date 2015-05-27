@@ -4,7 +4,7 @@ var gulp  = require('gulp'),
 gulp.task('scripts', compileScripts);
 
 function compileScripts() {
-  return gulp.src(['src/**/**/*.js'])
+  return gulp.src(['src/**/**/*.js', 'src/**/**/*.jsx'])
              .pipe(babel())
              .pipe(gulp.dest('dist'));
 }

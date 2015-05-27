@@ -2,14 +2,14 @@ import _ from 'lodash';
 import 'lodash-deep';
 
 class EventBus {
-  constructor($window) {
-    $window.Hitch = $window.Hitch || {};
-    $window.Hitch.Events = {
+  constructor() {
+    window.Hitch = window.Hitch || {};
+    window.Hitch.Events = {
       history: []
     };
 
     this.subscriptions = {};
-    this.$window = $window;
+    this.window = window;
   }
 
   /**
@@ -33,10 +33,8 @@ class EventBus {
     const event = _.deepGet(this.subscriptions, eventName);
     event(payload);
 
-    this.$window.Hitch.Events.history.push(eventName);
+    this.window.Hitch.Events.history.push(eventName);
   }
 }
-
-EventBus.$inject = ['$window'];
 
 export default EventBus;
