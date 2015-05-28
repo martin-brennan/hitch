@@ -26,6 +26,7 @@
     "lodash-deep": "~1.6.0",
     "react": "~0.13.3",
     "react-router": "~0.13.3",
-    "system.js": "~0.16.11"
+    "system.js": "~0.16.11",
+    "bluebird": "~2.9.26"
   }
 }

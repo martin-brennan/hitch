@@ -1,5 +1,6 @@
 import React from 'react';
 import EventBus from './services/eventBus';
+import API from './services/api';
 import Welcome from 'components/welcome/welcome';
 import Issues from 'components/issues/issues';
 
@@ -10,6 +11,12 @@ var Route = Router.Route;
 var RouteHandler = Router.RouteHandler;
 
 class Hitch extends React.Component {
+  // constructor() {
+  //   window.Hitch = window.Hitch || {};
+  //
+  //   window.Hitch.version = '0.0.1';
+  //   window.Hitch.API     = API;
+  // }
   render() {
     return (
       <div id="hitch">
@@ -24,7 +31,7 @@ class Hitch extends React.Component {
 
 var routes = (
   <Route name="app" path="/" handler={Hitch}>
-    <DefaultRoute handler={Welcome}/>
+    <DefaultRoute handler={Issues}/>
     <Route name="issues" handler={Issues}/>
   </Route>
 );

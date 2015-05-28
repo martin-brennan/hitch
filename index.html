@@ -10,11 +10,13 @@
         'dist/*': '/dist/*.js',
         'services/*': '/dist/services/*.js',
         'components/*': '/dist/components/*.js',
+        'models/*': '/dist/models/*.js',
         'templates': '/dist/templates.js',
         'react': '/bower_components/react/react.min.js',
         'react-router': '/bower_components/react-router/build/umd/ReactRouter.js',
         'lodash': '/bower_components/lodash/lodash.min.js',
-        'lodash-deep': '/bower_components/lodash-deep/lodash-deep.min.js'
+        'lodash-deep': '/bower_components/lodash-deep/lodash-deep.min.js',
+        'bluebird': '/bower_components/bluebird/js/browser/bluebird.js'
       };
       System.import('./dist/app').then(function(Hitch) {
         var hitch = new Hitch();
