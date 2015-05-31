@@ -4,19 +4,23 @@ import API from './services/api';
 import Welcome from 'components/welcome/welcome';
 import Issues from 'components/issues/issues';
 
-var Router = require('react-router');
-var DefaultRoute = Router.DefaultRoute;
-var Link = Router.Link;
-var Route = Router.Route;
-var RouteHandler = Router.RouteHandler;
+// import the router for use with API route initialization.
+const Router = require('react-router');
+const DefaultRoute = Router.DefaultRoute;
+const Link = Router.Link;
+const Route = Router.Route;
+const RouteHandler = Router.RouteHandler;
 
 class Hitch extends React.Component {
-  // constructor() {
-  //   window.Hitch = window.Hitch || {};
-  //
-  //   window.Hitch.version = '0.0.1';
-  //   window.Hitch.API     = API;
-  // }
+  constructor(props, context) {
+    super(props, context);
+
+    window.Hitch = window.Hitch || {};
+
+    window.Hitch.version = '0.0.1';
+    window.Hitch.API     = new API("localhost:49793");
+  }
+
   render() {
     return (
       <div id="hitch">
@@ -29,6 +33,7 @@ class Hitch extends React.Component {
   }
 }
 
+// define routes and run the router
 var routes = (
   <Route name="app" path="/" handler={Hitch}>
     <DefaultRoute handler={Issues}/>

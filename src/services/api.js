@@ -24,6 +24,10 @@ class API {
       request.send();
     })
   }
+
+  params(route) {
+    
+  }
 }
 
 export default API;
